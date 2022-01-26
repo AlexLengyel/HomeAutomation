@@ -1,1 +1,97 @@
+/* Default Styles */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  font-size: 15px;
+}
+
+/* Containers */
+
+.column-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.row-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+#control-panel {
+  width: 230px;
+}
+
+.impact {
+  margin-bottom: 1.5rem;
+}
+
+.impact:last-child {
+  margin-bottom: 0rem;
+}
+
+.feature {
+  margin-bottom: 0.6rem;
+}
+
+.feature:last-child {
+  margin-bottom: 0rem;
+}
+
+.room {
+  margin-bottom: 1rem;
+}
+
+.room:last-child {
+  margin-bottom: 0rem;
+}
+
+/* Headings & Paragraphs */
+
+.title {
+  font-weight: bold;
+}
+
+.main {
+  margin-bottom: 1.5rem;
+
+  font-size: 2rem;
+  text-align: center;
+}
+
+.impact-name {
+  margin-bottom: 1rem;
+
+  font-size: 1.7rem;
+}
+
+.feature-name {
+  font-size: 1rem;
+}
+
+.room-name {
+  margin-bottom: 0.6rem;
+
+  font-size: 1.2rem;
+}
+
+/* Input */
+
+#temperature {
+  margin-left: 1rem;
+}
+
+.feature-checkbox {
+  margin-right: 1rem;
+
+  transform: scale(1.2);
+}

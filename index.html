@@ -5,12 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="data/data.js" type="text/javascript" defer></script>
+    <!-- Functions for the control panel logic -->
+    <script
+      src="javascript/functions/curtain.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/functions/light.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/functions/temperature.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/functions/helper.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <!-- Control panel setup -->
+    <script
+      src="javascript/setup/house.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/setup/room.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/setup/setup.js"
+      type="text/javascript"
+      defer
+    ></script>
     <script src="javascript/index.js" type="text/javascript" defer></script>
     <title>Home Automation</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <div class="control-panel"></div>
+    <div class="column-container" id="control-panel">
+      <div class="wrapper">
+        <h1 class="title main">Control Panel</h1>
+      </div>
+      <!--<div class="column-container impact">
+        <div class="wrapper">
+          <h2 class="title impact">House</h2>
+        </div>
+        <div class="row-container house-feature">
+          <p class="feature-name">Temperature</p>
+        </div>
+      </div>
+      <div class="column-container impact">
+        <div class="wrapper">
+          <h2 class="title impact">Rooms</h2>
+        </div>
+        <div class="column-container room">
+          <div class="wrapper">
+            <h3 class="title room">Living Room:</h3>
+          </div>
+          <div class="row-container room-feature">
+            <label class="feature-name"
+              ><input
+                class="feature-checkbox"
+                id="living-room/overhead-light"
+                type="checkbox"
+              />Overhead Light</label
+            >
+          </div>
+          <div class="row-container room-feature">
+            <label class="feature-name"
+              ><input
+                class="feature-checkbox"
+                id="living-room/overhead-light"
+                type="checkbox"
+              />Overhead Light</label
+            >
+          </div>
+        </div>
+      </div>-->
+    </div>
+
     <svg
       id="floor-plan"
       xmlns="http://www.w3.org/2000/svg"
