@@ -19,23 +19,15 @@ let jsonObject = {
         "true": "On",
         "false": "Off",
       },
-      "style-values": {
-        "on-opacity-change": -0.2,
-        "off-opacity-change": 0.2,
-      },
     },
     "curtain": {
       "name": "Curtains",
-      "description": "Draw the curtain in the room",
+      "description": "Draw the curtains in the room",
       "data-type": "boolean",
       "impact": "room",
       "values": {
         "true": "Open",
         "false": "Closed",
-      },
-      "style-values": {
-        "open-opacity-change": -0.2,
-        "closed-opacity-change": 0.2,
       },
     },
   },
@@ -52,8 +44,35 @@ let jsonObject = {
     },
     "rooms": [
       {
+        "svg-id": "master-bedroom",
+        "name": "Master Bedroom",
+        "number-of-automations": 3,
+        "features": {
+          "lights": [
+            {
+              "id": "master-bedroom-overhead-light",
+              "name": "Overhead Light",
+              "current-value": "Off",
+            },
+            {
+              "id": "master-bedroom-beside-lamp",
+              "name": "Beside Lamp",
+              "current-value": "Off",
+            },
+          ],
+          "curtains": [
+            {
+              "id": "master-bedroom-blackout-curtains",
+              "name": "Blackout Curtains",
+              "current-value": "Open",
+            },
+          ],
+        },
+      },
+      {
         "svg-id": "bedroom",
         "name": "Bedroom",
+        "number-of-automations": 2,
         "features": {
           "lights": [
             {
@@ -61,13 +80,7 @@ let jsonObject = {
               "name": "Overhead Light",
               "current-value": "Off",
             },
-            {
-              "id": "bedroom-beside-lamp",
-              "name": "Beside Lamp",
-              "current-value": "Off",
-            },
           ],
-
           "curtains": [
             {
               "id": "bedroom-blackout-curtains",
@@ -80,6 +93,7 @@ let jsonObject = {
       {
         "svg-id": "hallway",
         "name": "Hallway",
+        "number-of-automations": 1,
         "features": {
           "lights": [
             {
@@ -94,6 +108,7 @@ let jsonObject = {
       {
         "svg-id": "kitchen",
         "name": "Kitchen",
+        "number-of-automations": 2,
         "features": {
           "lights": [
             {
@@ -114,6 +129,7 @@ let jsonObject = {
       {
         "svg-id": "living-room",
         "name": "Living Room",
+        "number-of-automations": 4,
         "features": {
           "lights": [
             {
@@ -129,8 +145,13 @@ let jsonObject = {
           ],
           "curtains": [
             {
-              "id": "living-room-curtains",
-              "name": "Curtains",
+              "id": "living-room-front-curtains",
+              "name": "Front Curtains",
+              "current-value": "Open",
+            },
+            {
+              "id": "living-room-side-curtains",
+              "name": "Front Curtains",
               "current-value": "Open",
             },
           ],
@@ -139,6 +160,7 @@ let jsonObject = {
       {
         "svg-id": "bathroom",
         "name": "Bathroom",
+        "number-of-automations": 3,
         "features": {
           "lights": [
             {
@@ -159,6 +181,21 @@ let jsonObject = {
               "current-value": "Open",
             },
           ],
+        },
+      },
+      {
+        "svg-id": "terrace",
+        "name": "Terrace",
+        "number-of-automations": 1,
+        "features": {
+          "lights": [
+            {
+              "id": "terrace-overhead-light",
+              "name": "Overhead Light",
+              "current-value": "Off",
+            },
+          ],
+          "curtains": [],
         },
       },
     ],

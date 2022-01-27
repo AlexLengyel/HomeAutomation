@@ -7,3 +7,9 @@ const createElementAndSetAttribute = (elementTag, attributesObject) => {
 
   return element;
 };
+
+const setAttributes = (element, attributesObject) => {
+  for (const key in attributesObject) {
+    element.setAttribute(key, attributesObject[key]);
+  }
+};

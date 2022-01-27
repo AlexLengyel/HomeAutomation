@@ -1,66 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Styles -->
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <!-- Database -->
-    <script src="data/data.js" type="text/javascript" defer></script>
-    <!-- On click functions for each automation feature -->
-    <script
-      src="javascript/functions/curtain.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/light.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/temperature.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/helper.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <!-- Control panel setup -->
-    <script
-      src="javascript/setup/house.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/setup/room.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/setup/setup.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <title>Home Automation</title>
-  </head>
-  <body>
-    <!-- This container will be filled with home automation controls  -->
-    <div class="column-container" id="control-panel">
-      <h1 class="title main">Control Panel</h1>
-    </div>
-    <!-- <object
-      type="image/svg+xml"
-      data="assets/floor-plan/floor_plan.svg"
-      id="floor-plan"
-    ></object> -->
-    <!-- Floor Plan SVG -->
-    <svg
+<svg
       cache-id="34fe897038b042e696835752d0dc0d23"
-      id="floor-plan"
+      id="untitled"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 640 480"
@@ -279,5 +219,3 @@
         </text>
       </g>
     </svg>
-  </body>
-</html>
