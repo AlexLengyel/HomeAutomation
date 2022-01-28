@@ -2,25 +2,33 @@
 
 // Setup all the rooms and their features
 const setupRoomsAndTheirFeatures = (rooms, featureTypes) => {
-  // Create main container for the rooms and their features
+  // Create main container for the whole rooms and their features nodes
   const mainContainer = createElementAndSetAttribute("div", {
-    "class": "column-container impact",
+    "class": "column-container impact-container",
   });
 
-  // Create title ("Room")
+  // Create title ("Rooms")
   const title = createElementAndSetAttribute("h2", {
-    "class": "title impact-name",
+    "class": "white-title impact-name",
   });
-  title.innerText = "Room";
+  title.innerText = "Rooms";
+
+  // Create control cards container for the rooms and their features
+  const roomsContainer = createElementAndSetAttribute("div", {
+    "class": "control-cards-container",
+  });
 
   // Add title to main container (rooms container)
   mainContainer.appendChild(title);
 
-  /* Add each room and their features to main container (rooms container)
+  /* Add each room and their features to rooms container
    by looping through the rooms array and call the setupRoom function which initializes each room */
   for (const room of rooms) {
-    mainContainer.appendChild(setupRoom(room, featureTypes));
+    roomsContainer.appendChild(setupRoom(room, featureTypes));
   }
+
+  // Add rooms container within the rooms and their feature to main container
+  mainContainer.appendChild(roomsContainer);
 
   // Return the whole rooms and their features node
   return mainContainer;
@@ -30,16 +38,21 @@ const setupRoomsAndTheirFeatures = (rooms, featureTypes) => {
 
 // Setup a room and it's features
 const setupRoom = (room, featureTypes) => {
-  // Create main container for the rooms and their features
+  // Create main container (card) for the rooms and their features
   const mainContainer = createElementAndSetAttribute("div", {
-    "class": "column-container room",
+    "class": "column-container card-container-style control-card-container",
   });
 
   // Create room name (for example "Bedroom")
   const roomName = createElementAndSetAttribute("h3", {
-    "class": "title room-name",
+    "class": "black-title card-name",
   });
   roomName.innerText = room["name"];
+
+  // Create automation features container for the features
+  const featuresContainer = createElementAndSetAttribute("div", {
+    "class": "column-container features-container",
+  });
 
   const numberOfAutomations = room["number-of-automations"];
   // (Default value - Minimum value) / Number of automations in the room
@@ -53,25 +66,28 @@ const setupRoom = (room, featureTypes) => {
   // Add title to main container (room container)
   mainContainer.appendChild(roomName);
 
-  /* Add each light feature to main container (room container)
+  /* Add each light feature to features container
    by looping through the light features array and call the initLight function which initializes each light feature */
   const lights = room["features"]["lights"];
   const lightFeatureType = featureTypes["light"];
   for (const light of lights) {
-    mainContainer.appendChild(
+    featuresContainer.appendChild(
       initLight(light, lightFeatureType, opacityChangeValue, roomSvgId)
     );
   }
 
-  /* Add each curtain feature to main container (room container)
+  /* Add each curtain feature to features container
    by looping through the curtain features array and call the initCurtain function which initializes each light feature */
   const curtains = room["features"]["curtains"];
   const curtainFeatureType = featureTypes["curtain"];
   for (const curtain of curtains) {
-    mainContainer.appendChild(
+    featuresContainer.appendChild(
       initCurtain(curtain, curtainFeatureType, opacityChangeValue, roomSvgId)
     );
   }
+
+  // Add features container to main container (room container)
+  mainContainer.appendChild(featuresContainer);
 
   // Return the whole room node
   return mainContainer;
@@ -87,7 +103,7 @@ const setupRoom = (room, featureTypes) => {
 const initLight = (light, lightFeatureType, opacityChangeValue, roomSvgId) => {
   // Create main container for the light feature
   const mainContainer = createElementAndSetAttribute("div", {
-    "class": "row-container feature",
+    "class": "row-container feature-container",
   });
 
   // Create light name (for example "Overhead Light")
@@ -153,7 +169,7 @@ const initCurtain = (
 ) => {
   // Create main container for the curtain feature
   const mainContainer = createElementAndSetAttribute("div", {
-    "class": "row-container feature",
+    "class": "row-container feature-container",
   });
 
   // Create curtain name (for example "Blackout Curtains")
