@@ -1,4 +1,4 @@
-const controlPanelId = "control-panel";
+const controlPanelId = "control-panel-container";
 const homeData = jsonObject;
 console.log(homeData);
 
@@ -10,10 +10,10 @@ const initControlPanel = (homeData, controlPanelId) => {
   const houseFeatures = homeData["home"]["house"]["features"];
   const rooms = homeData["home"]["rooms"];
 
-  // Add the whole house features node to the control panel
-  controlPanel.appendChild(setupHouseFeatures(houseFeatures, featureTypes));
   // Add the whole rooms and their features node to the control panel
   controlPanel.appendChild(setupRoomsAndTheirFeatures(rooms, featureTypes));
+  // Add the whole house features node to the control panel
+  controlPanel.appendChild(setupHouseFeatures(houseFeatures, featureTypes));
 };
 
 initControlPanel(homeData, controlPanelId);
