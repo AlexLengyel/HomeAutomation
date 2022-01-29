@@ -6,8 +6,9 @@ let jsonObject = {
       "data-type": "integer",
       "impact": "house",
       "values": {
-        "min": -10,
-        "max": 60,
+        "min": -10.0,
+        "max": 50.0,
+        "modifier": 0.5,
       },
     },
     "light": {
@@ -36,9 +37,11 @@ let jsonObject = {
     "house": {
       "features": {
         "temperature": {
-          "id": "temperature",
-          "name": "Temperature",
-          "current-value": 30,
+          "id": "thermostat",
+          "name": "Thermostat",
+          "scale": "celsius",
+          "symbol": "°C",
+          "current-value": 20.0,
         },
       },
     },
@@ -151,7 +154,7 @@ let jsonObject = {
             },
             {
               "id": "living-room-side-curtains",
-              "name": "Front Curtains",
+              "name": "Side Curtains",
               "current-value": "Open",
             },
           ],

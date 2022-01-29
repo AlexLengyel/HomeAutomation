@@ -24,7 +24,7 @@ const setupRoomsAndTheirFeatures = (rooms, featureTypes) => {
   /* Add each room and their features to rooms container
    by looping through the rooms array and call the setupRoom function which initializes each room */
   for (const room of rooms) {
-    roomsContainer.appendChild(setupRoom(room, featureTypes));
+    roomsContainer.appendChild(setupRoomCard(room, featureTypes));
   }
 
   // Add rooms container within the rooms and their feature to main container
@@ -36,8 +36,8 @@ const setupRoomsAndTheirFeatures = (rooms, featureTypes) => {
 
 // ----------------------------------------------------------------------------------------
 
-// Setup a room and it's features
-const setupRoom = (room, featureTypes) => {
+// Setup a room card and it's features
+const setupRoomCard = (room, featureTypes) => {
   // Create main container (card) for the rooms and their features
   const mainContainer = createElementAndSetAttribute("div", {
     "class": "column-container card-container-style control-card-container",
@@ -129,10 +129,10 @@ const initLight = (light, lightFeatureType, opacityChangeValue, roomSvgId) => {
 
   // Create light icon and set it's attributes
   const lightIcon = createElementAndSetAttribute("img", {
-    "src": `${currentValue === trueValue ? onImg : offImg}`,
+    "src": currentValue === trueValue ? onImg : offImg,
     "class": "feature-icon",
-    "id": `${lightId}`,
-    "value": `${currentValue}`,
+    "id": lightId,
+    "value": currentValue,
     "alt": "Lightbulb Icon",
   });
 
@@ -195,10 +195,10 @@ const initCurtain = (
 
   // Create curtain icon and set it's attributes
   const curtainIcon = createElementAndSetAttribute("img", {
-    "src": `${currentValue === trueValue ? openImg : closedImg}`,
+    "src": currentValue === trueValue ? openImg : closedImg,
     "class": "feature-icon",
-    "id": `${curtainId}`,
-    "value": `${currentValue}`,
+    "id": curtainId,
+    "value": currentValue,
     "alt": "Curtain Icon",
   });
 

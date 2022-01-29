@@ -41,6 +41,12 @@ body {
   align-items: center;
 }
 
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Impact containers */
 
 .impact-container {
@@ -113,9 +119,10 @@ body {
 
   align-items: center;
 
+  cursor: pointer;
   border-radius: 30px;
 
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .feature-container:last-child {
@@ -136,6 +143,36 @@ body {
   width: 80%;
 
   margin: 0 auto;
+}
+
+/* Thermostat IDs */
+
+#thermostat-container-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+#thermostat-container {
+  width: 100%;
+}
+
+#thermostat-display-container {
+  width: 8rem;
+  height: 4rem;
+
+  border: solid 3px #000000;
+  border-radius: 10px;
+  background-color: #cbcbcb;
+}
+
+#thermostat-arrows-container {
+  height: 100%;
+  width: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 0.3rem;
 }
 
 /* ---------------------------------------------------------------- */
@@ -177,7 +214,15 @@ body {
   margin-left: 0.7rem;
 
   font-size: 1rem;
-  transition: all 0.3s ease;
+  font-weight: bold;
+
+  transition: color 0.3s ease;
+}
+
+/* Thermostat text */
+
+.thermostat-text {
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
@@ -208,6 +253,26 @@ body {
 .floor-plan {
   width: 100%;
   height: 100%;
+}
+
+/* Thermostat arrow icon */
+.thermostat-arrow-icon {
+  height: 2.3rem;
+  width: auto;
+
+  padding: 0.1rem;
+  margin: 0.1rem 0;
+
+  color: #000000;
+  cursor: pointer;
+  border-radius: 7px;
+  border: solid 3px #ffffff;
+
+  transition: border-color 0.3s ease;
+}
+
+.thermostat-arrow-icon:hover {
+  border-color: #0085ff;
 }
 
 /* ---------------------------------------------------------------- */
