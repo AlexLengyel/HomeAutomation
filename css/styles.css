@@ -12,9 +12,13 @@ body {
   min-height: 100vh;
 
   font-size: 15px;
-  background-color: #63a4ff;
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+
+  background: rgb(108, 194, 228);
+  background: linear-gradient(
+    120deg,
+    rgba(108, 194, 228, 1) 0%,
+    rgba(52, 162, 208, 1) 100%
+  );
 }
 
 /* ---------------------------------------------------------------- */
@@ -50,7 +54,7 @@ body {
 /* Impact containers */
 
 .impact-container {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Cards container */
@@ -59,6 +63,7 @@ body {
   width: 100%;
 
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, 14rem);
   grid-gap: 1rem;
 }
@@ -71,14 +76,14 @@ body {
 }
 
 .floor-plan-card-container {
-  height: 50vh;
-  width: 50%;
+  height: 31rem;
+  width: 52rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 3rem auto;
   padding: 1rem;
 
   border-radius: 50px;
@@ -97,6 +102,8 @@ body {
 
 .features-container {
   width: 100%;
+
+  border-radius: 0 0 20px 20px;
 
   overflow-x: hidden;
   overflow-y: scroll;
@@ -130,7 +137,8 @@ body {
 }
 
 .feature-container:hover {
-  background-color: #0085ff;
+  /*background-color: #0085ff;*/
+  background-color: #309bc9;
 }
 
 .feature-container:hover .feature-name {
@@ -158,7 +166,7 @@ body {
 /* IDs */
 
 #control-panel-container {
-  width: 80%;
+  width: 90%;
 
   margin: 0 auto;
 }
@@ -180,7 +188,7 @@ body {
 
   border: solid 3px #000000;
   border-radius: 10px;
-  background-color: #cbcbcb;
+  background-color: #cadadf;
 }
 
 #thermostat-arrows-container {
@@ -215,9 +223,10 @@ body {
 }
 
 .impact-name {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .card-name {
@@ -249,7 +258,7 @@ body {
 #main-title {
   margin: 2rem 0;
 
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -275,7 +284,6 @@ body {
   margin: 0.1rem 0;
 
   color: #000000;
-  background-color: transparent;
   cursor: pointer;
   border-radius: 10px;
   border: solid 3px #ffffff;
@@ -284,7 +292,7 @@ body {
 }
 
 .thermostat-arrow-icon:hover {
-  border-color: #0085ff;
+  border-color: #309bc9;
 }
 
 #arrow-up-icon {
@@ -307,21 +315,41 @@ body {
 
 /* ---------------------------------------------------------------- */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .floor-plan-card-container {
-    height: 40vh;
-    width: 95%;
-  }
-
-  .control-cards-container {
-    justify-content: center;
-  }
-
-  .impact-name {
-    text-align: center;
+    height: 29rem;
+    width: 45rem;
   }
 
   #control-panel-container {
     width: 96%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .floor-plan-card-container {
+    height: 27rem;
+    width: 40rem;
+  }
+
+  #control-panel-container {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .floor-plan-card-container {
+    height: 35vh;
+    width: 96%;
+  }
+
+  #control-panel-container {
+    width: 96%;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 2/1) {
+  #control-panel-container {
+    width: 110rem;
   }
 }
