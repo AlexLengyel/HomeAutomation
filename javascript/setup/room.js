@@ -116,8 +116,8 @@ const initLight = (light, lightFeatureType, opacityChangerValue, roomSvgId) => {
   const currentValue = light["current-value"];
   const trueValue = lightFeatureType["values"]["true"];
   const falseValue = lightFeatureType["values"]["false"];
-  const onImg = "/assets/lightbulbs/lightbulb_on.png";
-  const offImg = "/assets/lightbulbs/lightbulb_off.png";
+  const onImg = "assets/lightbulbs/lightbulb_on.png";
+  const offImg = "assets/lightbulbs/lightbulb_off.png";
 
   /* If the light is on at initialization then it's modifing value should be subtracted 
   from the initial opacity value */
