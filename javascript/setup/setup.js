@@ -1,6 +1,5 @@
 const controlPanelId = "control-panel-container";
 const homeData = jsonObject;
-console.log(homeData);
 
 // Initialize Control Panel
 const initControlPanel = (homeData, controlPanelId) => {

@@ -133,7 +133,6 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
     "class": "thermostat-arrow-icon",
     "id": "arrow-up-icon",
   });
-  console.log(arrowUpButton.style.backgroundImage);
   // Create arrow down button and set it's attributes
   const arrowDownButton = createElementAndSetAttribute("button", {
     "class": "thermostat-arrow-icon",
