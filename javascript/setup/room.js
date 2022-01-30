@@ -116,8 +116,8 @@ const initLight = (light, lightFeatureType, opacityChangerValue, roomSvgId) => {
   const currentValue = light["current-value"];
   const trueValue = lightFeatureType["values"]["true"];
   const falseValue = lightFeatureType["values"]["false"];
-  const onImg = "assets/lightbulbs/lightbulb_on.png";
-  const offImg = "assets/lightbulbs/lightbulb_off.png";
+  const onImg = "/assets/lightbulbs/lightbulb_on.png";
+  const offImg = "/assets/lightbulbs/lightbulb_off.png";
 
   /* If the light is on at initialization then it's modifing value should be subtracted 
   from the initial opacity value */
@@ -183,8 +183,8 @@ const initCurtain = (
   const currentValue = curtain["current-value"];
   const trueValue = curtainFeatureType["values"]["true"];
   const falseValue = curtainFeatureType["values"]["false"];
-  const openImg = "assets/curtains/curtain_open.png";
-  const closedImg = "assets/curtains/curtain_closed.png";
+  const openImg = "/assets/curtains/curtain_open.png";
+  const closedImg = "/assets/curtains/curtain_closed.png";
 
   /* If the curtain is open at initialization then it's modifing value should be subtracted 
   from the initial opacity value */
