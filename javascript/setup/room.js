@@ -56,7 +56,7 @@ const setupRoomCard = (room, featureTypes) => {
 
   const numberOfAutomations = room["number-of-automations"];
   // (Default value - Minimum value) / Number of automations in the room
-  const opacityChangeValue = (1 - 0.3) / numberOfAutomations;
+  const opacityChangerValue = (1 - 0.3) / numberOfAutomations;
 
   // Initialize room's fill opacity value to be able to change it in the on click functions
   const roomSvgId = room["svg-id"];
@@ -72,7 +72,7 @@ const setupRoomCard = (room, featureTypes) => {
   const lightFeatureType = featureTypes["light"];
   for (const light of lights) {
     featuresContainer.appendChild(
-      initLight(light, lightFeatureType, opacityChangeValue, roomSvgId)
+      initLight(light, lightFeatureType, opacityChangerValue, roomSvgId)
     );
   }
 
@@ -82,7 +82,7 @@ const setupRoomCard = (room, featureTypes) => {
   const curtainFeatureType = featureTypes["curtain"];
   for (const curtain of curtains) {
     featuresContainer.appendChild(
-      initCurtain(curtain, curtainFeatureType, opacityChangeValue, roomSvgId)
+      initCurtain(curtain, curtainFeatureType, opacityChangerValue, roomSvgId)
     );
   }
 
@@ -100,7 +100,7 @@ const setupRoomCard = (room, featureTypes) => {
 // ----------------------------------------------------------------------------------------
 
 // Initialize light feature
-const initLight = (light, lightFeatureType, opacityChangeValue, roomSvgId) => {
+const initLight = (light, lightFeatureType, opacityChangerValue, roomSvgId) => {
   // Create main container for the light feature
   const mainContainer = createElementAndSetAttribute("div", {
     "class": "row-container feature-container",
@@ -116,32 +116,33 @@ const initLight = (light, lightFeatureType, opacityChangeValue, roomSvgId) => {
   const currentValue = light["current-value"];
   const trueValue = lightFeatureType["values"]["true"];
   const falseValue = lightFeatureType["values"]["false"];
-  const onImg = "assets/lightbulbs/lightbulb_on.png";
-  const offImg = "assets/lightbulbs/lightbulb_off.png";
+  const onImg = "/assets/lightbulbs/lightbulb_on.png";
+  const offImg = "/assets/lightbulbs/lightbulb_off.png";
 
   /* If the light is on at initialization then it's modifing value should be subtracted 
   from the initial opacity value */
   const roomSvg = document.getElementById(roomSvgId);
   const roomOpacityValue = parseFloat(roomSvg.style.fillOpacity);
   if (currentValue === trueValue) {
-    roomSvg.style.fillOpacity = roomOpacityValue - opacityChangeValue;
+    roomSvg.style.fillOpacity = roomOpacityValue - opacityChangerValue;
   }
 
   // Create light icon and set it's attributes
-  const lightIcon = createElementAndSetAttribute("img", {
-    "src": currentValue === trueValue ? onImg : offImg,
-    "class": "feature-icon",
+  const lightIcon = createElementAndSetAttribute("div", {
+    "class": "light-feature-icon",
     "id": lightId,
     "value": currentValue,
-    "alt": "Lightbulb Icon",
   });
+  lightIcon.style.backgroundImage = `url(${
+    currentValue === trueValue ? onImg : offImg
+  })`;
 
   /* Add on click event listener to main container (light feature container)
   by using lightOnClick callback function to add the logic to it */
   const lightAttributes = {
     trueValue,
     falseValue,
-    opacityChangeValue,
+    opacityChangerValue,
     onImg,
     offImg,
   };
@@ -164,7 +165,7 @@ const initLight = (light, lightFeatureType, opacityChangeValue, roomSvgId) => {
 const initCurtain = (
   curtain,
   curtainFeatureType,
-  opacityChangeValue,
+  opacityChangerValue,
   roomSvgId
 ) => {
   // Create main container for the curtain feature
@@ -190,24 +191,25 @@ const initCurtain = (
   const roomSvg = document.getElementById(roomSvgId);
   const roomOpacityValue = parseFloat(roomSvg.style.fillOpacity);
   if (currentValue === trueValue) {
-    roomSvg.style.fillOpacity = roomOpacityValue - opacityChangeValue;
+    roomSvg.style.fillOpacity = roomOpacityValue - opacityChangerValue;
   }
 
   // Create curtain icon and set it's attributes
-  const curtainIcon = createElementAndSetAttribute("img", {
-    "src": currentValue === trueValue ? openImg : closedImg,
-    "class": "feature-icon",
+  const curtainIcon = createElementAndSetAttribute("div", {
+    "class": "curtain-feature-icon",
     "id": curtainId,
     "value": currentValue,
-    "alt": "Curtain Icon",
   });
+  curtainIcon.style.backgroundImage = `url(${
+    currentValue === trueValue ? openImg : closedImg
+  })`;
 
   /* Add on click event listener to main container (curtain feature container)
   by using curtainOnClick callback function to add the logic to it */
   const curtainAttributes = {
     trueValue,
     falseValue,
-    opacityChangeValue,
+    opacityChangerValue,
     openImg,
     closedImg,
   };

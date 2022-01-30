@@ -13,3 +13,25 @@ const setAttributes = (element, attributesObject) => {
     element.setAttribute(key, attributesObject[key]);
   }
 };
+
+const roomFeatureStateChanger = (
+  featureElement,
+  newValue,
+  newImage,
+  roomSvgEl,
+  roomOpacityValue,
+  roomOpacityOperator,
+  opacityChangerValue
+) => {
+  setAttributes(featureElement, {
+    "value": newValue,
+  });
+
+  featureElement.style.backgroundImage = `url(${newImage})`;
+
+  if (roomOpacityOperator === "+") {
+    roomSvgEl.style.fillOpacity = roomOpacityValue + opacityChangerValue;
+  } else {
+    roomSvgEl.style.fillOpacity = roomOpacityValue - opacityChangerValue;
+  }
+};

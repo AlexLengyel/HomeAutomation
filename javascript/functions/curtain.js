@@ -4,23 +4,31 @@ const curtainOnClick = (curtainId, curtainAttributes, roomSvgId) => {
   // Get curtain's current value
   const currentValue = curtain.getAttribute("value");
 
-  const { trueValue, falseValue, opacityChangeValue, openImg, closedImg } =
+  const { trueValue, falseValue, opacityChangerValue, openImg, closedImg } =
     curtainAttributes;
   const roomSvg = document.getElementById(roomSvgId);
   const roomOpacityValue = parseFloat(roomSvg.style.fillOpacity);
 
   // Switch to curtain's opposite state and change the room's opacity value
   if (currentValue === trueValue) {
-    setAttributes(curtain, {
-      "src": closedImg,
-      "value": falseValue,
-    });
-    roomSvg.style.fillOpacity = roomOpacityValue + opacityChangeValue;
+    roomFeatureStateChanger(
+      curtain,
+      falseValue,
+      closedImg,
+      roomSvg,
+      roomOpacityValue,
+      "+",
+      opacityChangerValue
+    );
   } else {
-    setAttributes(curtain, {
-      "src": openImg,
-      "value": trueValue,
-    });
-    roomSvg.style.fillOpacity = roomOpacityValue - opacityChangeValue;
+    roomFeatureStateChanger(
+      curtain,
+      trueValue,
+      openImg,
+      roomSvg,
+      roomOpacityValue,
+      "-",
+      opacityChangerValue
+    );
   }
 };

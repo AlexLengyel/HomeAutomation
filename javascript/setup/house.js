@@ -61,8 +61,18 @@ const initTemperatureCard = (temperature, temperatureFeatureType) => {
   const modifierValue = parseFloat(
     temperatureFeatureType["values"]["modifier"]
   );
-  const currentValue = parseFloat(temperature["current-value"]).toFixed(1);
-  const values = { minValue, maxValue, modifierValue, currentValue };
+  // Value range from room temperature to thermostat's max or min value
+  const halfValueRange = parseFloat((maxValue - minValue) / 2);
+  const midValue = parseFloat(maxValue - halfValueRange);
+  const currentValue = parseFloat(temperature["current-value"]);
+  const values = {
+    minValue,
+    maxValue,
+    midValue,
+    modifierValue,
+    currentValue,
+    halfValueRange,
+  };
   const scaleSymbol = temperature["symbol"];
 
   // Add thermostat to thermostat container wrapper
@@ -101,7 +111,7 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
     "id": thermostatId,
     "value": currentValue,
   });
-  valueText.innerText = currentValue;
+  valueText.innerText = currentValue.toFixed(1);
 
   // Create paragraph for the scale's symbol
   const scaleSymbolText = createElementAndSetAttribute("p", {
@@ -118,24 +128,21 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
   displayContainer.appendChild(valueText);
   displayContainer.appendChild(scaleSymbolText);
 
-  const arrowUpImg = "assets/arrows/arrow_up.png";
-  const arrowDownImg = "assets/arrows/arrow_down.png";
-  // Create arrow up icon and set it's attributes
-  const arrowUpIcon = createElementAndSetAttribute("img", {
-    "src": arrowUpImg,
+  // Create arrow up button and set it's attributes
+  const arrowUpButton = createElementAndSetAttribute("button", {
     "class": "thermostat-arrow-icon",
-    "alt": "Arrow Up Icon",
+    "id": "arrow-up-icon",
   });
-  // Create arrow down icon and set it's attributes
-  const arrowDownIcon = createElementAndSetAttribute("img", {
-    "src": arrowDownImg,
+  console.log(arrowUpButton.style.backgroundImage);
+  // Create arrow down button and set it's attributes
+  const arrowDownButton = createElementAndSetAttribute("button", {
     "class": "thermostat-arrow-icon",
-    "alt": "Arrow Down Icon",
+    "id": "arrow-down-icon",
   });
 
-  /* Add on click event listener to arrow's icons
+  /* Add on click event listener to arrow's buttons
   by using temperatureOnClick callback function to add the logic to it */
-  arrowUpIcon.addEventListener("click", () =>
+  arrowUpButton.addEventListener("click", () =>
     temperatureOnClick(
       "up",
       thermostatId,
@@ -143,7 +150,7 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
       "floor-plan-card-container"
     )
   );
-  arrowDownIcon.addEventListener("click", () =>
+  arrowDownButton.addEventListener("click", () =>
     temperatureOnClick(
       "down",
       thermostatId,
@@ -152,9 +159,9 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
     )
   );
 
-  // Add arrow's icons to arrows container
-  arrowsContainer.appendChild(arrowUpIcon);
-  arrowsContainer.appendChild(arrowDownIcon);
+  // Add arrow's buttons to arrows container
+  arrowsContainer.appendChild(arrowUpButton);
+  arrowsContainer.appendChild(arrowDownButton);
 
   // Add display's container and arrows container to main container
   mainContainer.appendChild(displayContainer);

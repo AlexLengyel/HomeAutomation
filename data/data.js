@@ -6,8 +6,8 @@ let jsonObject = {
       "data-type": "integer",
       "impact": "house",
       "values": {
-        "min": -10.0,
-        "max": 50.0,
+        "min": 0.0,
+        "max": 40.0,
         "modifier": 0.5,
       },
     },
