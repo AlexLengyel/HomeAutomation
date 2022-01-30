@@ -288,14 +288,14 @@ body {
 }
 
 #arrow-up-icon {
-  background-image: url("/assets/arrows/arrow_up.png");
+  background-image: url("assets/arrows/arrow_up.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 83%;
 }
 
 #arrow-down-icon {
-  background-image: url("/assets/arrows/arrow_down.png");
+  background-image: url("assets/arrows/arrow_down.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 83%;
