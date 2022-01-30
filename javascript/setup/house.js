@@ -129,12 +129,12 @@ const initThermostat = (thermostatId, thermostatValues, scaleSymbol) => {
   displayContainer.appendChild(scaleSymbolText);
 
   // Create arrow up button and set it's attributes
-  const arrowUpButton = createElementAndSetAttribute("button", {
+  const arrowUpButton = createElementAndSetAttribute("div", {
     "class": "thermostat-arrow-icon",
     "id": "arrow-up-icon",
   });
   // Create arrow down button and set it's attributes
-  const arrowDownButton = createElementAndSetAttribute("button", {
+  const arrowDownButton = createElementAndSetAttribute("div", {
     "class": "thermostat-arrow-icon",
     "id": "arrow-down-icon",
   });
