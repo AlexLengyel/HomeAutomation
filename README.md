@@ -217,3 +217,7 @@ javascript/
 │  ├─ rooms.js
 │  ├─ temperature.js
 ```
+
+<h2>Resources for this Project</h2>
+
+<p>I have done it all by myself from scratch, but I got inspired from <a href="https://github.com/marybeshaw" target="_blank">Mary Shaw</a>'s "<a href="https://github.com/marybeshaw/Just-Another-Automated-Home" target="_blank">Just Another Automated Home</a>" project.</p>
