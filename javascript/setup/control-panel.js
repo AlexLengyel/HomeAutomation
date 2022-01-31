@@ -1,7 +1,7 @@
 const controlPanelId = "control-panel-container";
 const homeData = jsonObject;
 
-// Initialize Control Panel
+// Initialize control panel
 const initControlPanel = (homeData, controlPanelId) => {
   const controlPanel = document.getElementById(controlPanelId);
 
@@ -15,4 +15,9 @@ const initControlPanel = (homeData, controlPanelId) => {
   controlPanel.appendChild(setupHouseFeatures(houseFeatures, featureTypes));
 };
 
+// --------------------------------------------------------------------------------------------------------------------
+
+// Starter function call
 initControlPanel(homeData, controlPanelId);
+
+// --------------------------------------------------------------------------------------------------------------------

@@ -1,19 +1,4 @@
-const createElementAndSetAttribute = (elementTag, attributesObject) => {
-  const element = document.createElement(elementTag);
-
-  for (const key in attributesObject) {
-    element.setAttribute(key, attributesObject[key]);
-  }
-
-  return element;
-};
-
-const setAttributes = (element, attributesObject) => {
-  for (const key in attributesObject) {
-    element.setAttribute(key, attributesObject[key]);
-  }
-};
-
+// Change the element's value, background image and the room's opacity,
 const roomFeatureStateChanger = (
   featureElement,
   newValue,
