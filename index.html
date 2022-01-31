@@ -7,49 +7,75 @@
     <!-- Styles -->
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <!-- Database -->
-    <script src="data/data.js" type="text/javascript" defer></script>
-    <!-- On click functions for each automation feature -->
-    <script
-      src="javascript/functions/curtain.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/light.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/temperature.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script
-      src="javascript/functions/helper.js"
-      type="text/javascript"
-      defer
-    ></script>
+    <script src="data/home.js" type="text/javascript" defer></script>
     <!-- Control panel setup -->
+    <script
+      src="javascript/setup/rooms.js"
+      type="text/javascript"
+      defer
+    ></script>
     <script
       src="javascript/setup/house.js"
       type="text/javascript"
       defer
     ></script>
     <script
-      src="javascript/setup/room.js"
+      src="javascript/setup/light.js"
       type="text/javascript"
       defer
     ></script>
     <script
-      src="javascript/setup/setup.js"
+      src="javascript/setup/curtain.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/setup/temperature.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <!-- On click functions for each automation feature -->
+    <script
+      src="javascript/on-click-functions/light.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/on-click-functions/curtain.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/on-click-functions/temperature.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <!-- Helper functions -->
+    <script
+      src="javascript/helpers/document.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="javascript/helpers/features.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <!-- Starter Javascript -->
+    <script
+      src="javascript/setup/control-panel.js"
       type="text/javascript"
       defer
     ></script>
     <title>Home Automation</title>
   </head>
   <body>
+    <!-- Main Title -->
     <h1 class="white-title" id="main-title">Control Panel</h1>
+
+    <!-- Floor Plan Container -->
     <div class="card-container-style floor-plan-card-container">
+      <!-- Floor Plan SVG -->
       <svg
         cache-id="34fe897038b042e696835752d0dc0d23"
         id="floor-plan"
@@ -314,13 +340,8 @@
         </g>
       </svg>
     </div>
+
     <!-- This container will be filled with home automation controls  -->
     <div class="column-container" id="control-panel-container"></div>
-    <!-- <object
-      type="image/svg+xml"
-      data="assets/floor-plan/floor_plan.svg"
-      id="floor-plan"
-    ></object> -->
-    <!-- Floor Plan SVG -->
   </body>
 </html>

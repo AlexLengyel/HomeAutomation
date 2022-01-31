@@ -1,3 +1,4 @@
+// Change the thermostat's display value (themperature) and the floor plan's background color
 const temperatureOnClick = (
   direction,
   thermostatId,
@@ -36,7 +37,7 @@ const temperatureOnClick = (
   );
 };
 
-// ----------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 
 // Change the thermostat's display value (temperature)
 const changeThermostatValue = (temperatureValueText, newTemperatureValue) => {
@@ -47,7 +48,7 @@ const changeThermostatValue = (temperatureValueText, newTemperatureValue) => {
   temperatureValueText.innerText = newTemperatureValue.toFixed(1);
 };
 
-// ----------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 
 // Change the floor plans background color based on the thermostat's value
 const changeFloorPlanBackgroundColor = (
@@ -58,14 +59,14 @@ const changeFloorPlanBackgroundColor = (
   // Calculatings
   const { midValue, halfValueRange } = thermostatValues;
   const maxColorValue = 255;
-  const minColorValue = 0;
+  const minColorValue = 55;
   const colorChangerValue = parseInt(
     (maxColorValue - minColorValue) / halfValueRange
   );
   const absValueDiff = Math.abs(midValue - newTemperatureValue);
   const newColorValue = absValueDiff * colorChangerValue;
 
-  // Calculates the new rgb value
+  // Calculate the new rgb value
   let rgbValue = null;
   if (newTemperatureValue > midValue) {
     const blueValue = maxColorValue - newColorValue;
@@ -79,7 +80,7 @@ const changeFloorPlanBackgroundColor = (
 
   const floorPlans = document.getElementsByClassName(floorPlanClassName);
 
-  // Changes each floor plan's background color
+  // Change each floor plan's background color
   for (const floorPlan of floorPlans) {
     floorPlan.style.backgroundColor = rgbValue;
   }
