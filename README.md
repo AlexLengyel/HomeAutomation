@@ -34,7 +34,7 @@ browsers of your choice.</li>
 
 <h2>How does it work?</h2>
 
-<h3>By Features:</h3>
+<h3>Features:</h3>
 <ul>
   <li><b>Lights: </b>If the light's image, name or container has been clicked then it changes its:</li>
     <ul>
@@ -62,8 +62,6 @@ browsers of your choice.</li>
 <h2>Feature Types</h2>
 
 <p>All of the feature-type needs to be added to the "feature-type" object.</p>
-
-<h3>Based on its impact:</h3>
 
 <h3>House:</h3>
 
